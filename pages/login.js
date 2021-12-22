@@ -1,4 +1,5 @@
 import { getProviders, signIn } from "next-auth/react";
+import spotifyLogo from "../public/spotify-logo.png";
 
 function login({ providers }) {
   return (

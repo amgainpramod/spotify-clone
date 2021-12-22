@@ -1,7 +1,13 @@
 import Head from "next/head";
 import Sidebar from "../components/Sidebar";
+import Center from "../components/Center";
+import { useState } from "react";
+import { getSession } from "next-auth/react";
+import Player from "../components/Player";
 
 export default function Home() {
+  const [clickState, setClickState] = useState(false);
+
   return (
     <div className="bg-black h-screen overflow-hidden">
       <Head>
@@ -9,12 +15,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="flex">
         {/* Sidebar */}
         <Sidebar />
         {/* Center */}
+        <Center />
       </main>
-      <div>{/* Player */}</div>
+      <div className="sticky bottom-0">
+        {/* Player */}
+        <Player />
+      </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  return {
+    props: {
+      session,
+    },
+  };
 }
