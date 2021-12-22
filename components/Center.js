@@ -39,7 +39,7 @@ function Center() {
       .catch((err) => console.log("something went wrong!", err));
   }, [useSpotify, playlistId]);
 
-  console.log("playlist songs", playlist);
+  // console.log("playlist songs", playlist);
 
   return (
     <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">

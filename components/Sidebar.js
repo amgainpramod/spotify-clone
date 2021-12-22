@@ -27,7 +27,7 @@ export default function Sidebar() {
   }, [session, spotifyApi]);
 
   // console.log(playlists);
-  console.log(`You picked the song ${playlistId}`);
+  // console.log(`You picked the song ${playlistId}`);
 
   return (
     <div className="text-gray-400 p-5 text-[0.9rem] border-r border-gray-900  scrollbar-hide overflow-y-scroll h-screen sm:max-w-[12rem] md:max-w-[15rem] hidden md:inline-flex pb-36">
