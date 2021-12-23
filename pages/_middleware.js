@@ -10,7 +10,7 @@ export async function middleware(req) {
   //Allow if the following is true...
   //    1) It's a request for next-auth session & provider fetching
   //    2 if token exists
-
+  console.log("This is pathaname", pathname);
   if (pathname.includes("/api/auth") || token) {
     return NextResponse.next(); //continue on towards the app
   }
